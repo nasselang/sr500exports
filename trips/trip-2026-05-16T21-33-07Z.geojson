@@ -1,0 +1,71 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "trip_id": "2026-05-16T21-33-07Z",
+    "start_ts": "2026-05-16T21:33:07.000Z",
+    "end_ts": "2026-05-16T21:33:08.000Z",
+    "points": 2,
+    "distance_km": 0.0
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            10.798007471,
+            59.880038528,
+            161.9118
+          ],
+          [
+            10.798219153,
+            59.880060302,
+            162.424
+          ]
+        ]
+      },
+      "properties": {
+        "trip_id": "2026-05-16T21-33-07Z",
+        "start_ts": "2026-05-16T21:33:07.000Z",
+        "end_ts": "2026-05-16T21:33:08.000Z",
+        "points": 2,
+        "distance_km": 0.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.798007471,
+          59.880038528,
+          161.9118
+        ]
+      },
+      "properties": {
+        "ts": "2026-05-16T21:33:07.000Z",
+        "speed_kmh": 43.33,
+        "alt_m": 161.9118,
+        "trip_id": "2026-05-16T21-33-07Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.798219153,
+          59.880060302,
+          162.424
+        ]
+      },
+      "properties": {
+        "ts": "2026-05-16T21:33:08.000Z",
+        "speed_kmh": 43.13,
+        "alt_m": 162.424,
+        "trip_id": "2026-05-16T21-33-07Z"
+      }
+    }
+  ]
+}
