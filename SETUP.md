@@ -31,7 +31,8 @@ Hemmeligheter, credential-filer og øvrige systemfiler er utelatt med vilje.
 │   ├── latest.json
 │   └── trips/
 │       ├── trip-*.summary.json
-│       └── trip-*.geojson
+│       ├── trip-*.geojson
+│       └── trip-*.gpx
 ├── gps.db
 ├── scripts/
 │   ├── export_gps.py
@@ -95,6 +96,7 @@ Genererer:
 - `exports/latest.json`
 - `exports/trips/trip-*.summary.json`
 - `exports/trips/trip-*.geojson`
+- `exports/trips/trip-*.gpx`
 
 ### `sync_exports.sh`
 Kopierer eksportfiler inn i Git-repoet, committer og pusher ved endringer.
@@ -186,7 +188,6 @@ git log -1 --stat
 ```
 
 ## Gjenstående arbeid
-- GPX-eksport
 - ytterligere finjustering av turdeteksjon ved behov
 - publisering av rendret HTML-kart til en webserver eller annen URL-tilgjengelig flate
 - forbedret deling av kart ut til chatflater som bilde og/eller lenke

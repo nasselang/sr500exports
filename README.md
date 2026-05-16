@@ -6,6 +6,7 @@ Dette repoet mottar batch-oppdaterte eksportfiler fra Pi-en:
 - `latest.json` for siste kjente posisjon
 - `trips/trip-*.summary.json` for enkel turmetadata
 - `trips/trip-*.geojson` for rute + punkter
+- `trips/trip-*.gpx` for standard GPS-sporformat
 
 Målet er å holde repoet enkelt nok til at en OpenClaw-agent kan lese siste posisjon og siste tur uten å koble seg direkte til Pi-en.
 
@@ -17,7 +18,7 @@ Følgende er implementert på Pi-en:
 3. punktene grupperes til turer med `trip_id`
 4. tur avsluttes ved mer enn 5 minutters datagap eller ved lite bevegelse over 15 minutter
 5. ny tur opprettes når reell bevegelse starter igjen
-6. siste tur eksporteres til JSON/GeoJSON
+6. siste tur eksporteres til JSON/GeoJSON/GPX
 7. eksportene synkes automatisk til dette repoet hvert 15. minutt
 
 ## Arkitektur
@@ -32,7 +33,7 @@ På Raspberry Pi-en kjører følgende komponenter:
   - avslutter tur ved >5 min datagap eller 15 min lite bevegelse
   - oppretter ny tur når faktisk bevegelse starter igjen
 - `export_gps.py`
-  - eksporterer `latest.json`, `summary.json` og `geojson`
+  - eksporterer `latest.json`, `summary.json`, `geojson` og `gpx`
 - `sync_exports.sh`
   - kopierer eksportene inn i repoet, commit’er og pusher
 - `run_sync.sh`
@@ -69,6 +70,10 @@ GeoJSON `FeatureCollection` med:
 - en `LineString` for hele ruta
 - `Point`-features for hvert punkt
 
+### `trips/trip-*.gpx`
+GPX 1.1-sporfil for samme tur.
+Kan brukes i eksterne GPS-/kartverktøy som støtter GPX-import.
+
 ## Operativ filstruktur på SR500
 Bare prosjektets relevante struktur er dokumentert her.
 Secrets, Git-credentials og øvrige systemfiler er bevisst utelatt.
@@ -81,7 +86,8 @@ Secrets, Git-credentials og øvrige systemfiler er bevisst utelatt.
 │   ├── latest.json
 │   └── trips/
 │       ├── trip-*.summary.json
-│       └── trip-*.geojson
+│       ├── trip-*.geojson
+│       └── trip-*.gpx
 ├── gps.db
 ├── scripts/
 │   ├── read_gps.py
@@ -160,7 +166,7 @@ Det pushes bare når det faktisk finnes endringer.
 ## Nåværende begrensninger
 - turdeteksjon er forbedret med 15 min lite-bevegelse-regel, men er fortsatt heuristisk
 - eksportstruktur bruker foreløpig flat `trips/`-mappe
-- GPX er ikke implementert ennå
+- GPX er lagt til som eksportformat, men er foreløpig et enkelt sporformat uten ekstra waypoints/segmentmetadata
 - interaktiv HTML-kartvisning er foreløpig best egnet lokalt; publisering til en tilgjengelig webflate/URL gjenstår
 - Telegram-/chat-flater er best med bilde eller lenke, ikke rå lokal HTML-fil
 
