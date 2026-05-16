@@ -188,6 +188,6 @@ git log -1 --stat
 ## Gjenstående arbeid
 - GPX-eksport
 - ytterligere finjustering av turdeteksjon ved behov
-- OpenClaw-agent som leser eksportene
-- kart-rendering
-- Telegram-integrasjon
+- publisering av rendret HTML-kart til en webserver eller annen URL-tilgjengelig flate
+- forbedret deling av kart ut til chatflater som bilde og/eller lenke
+- eventuell Telegram-integrasjon rundt dette

@@ -7,7 +7,7 @@ Dette repoet mottar batch-oppdaterte eksportfiler fra Pi-en:
 - `trips/trip-*.summary.json` for enkel turmetadata
 - `trips/trip-*.geojson` for rute + punkter
 
-Målet er å holde repoet enkelt nok til at en OpenClaw-agent senere kan lese siste posisjon og siste tur uten å koble seg direkte til Pi-en.
+Målet er å holde repoet enkelt nok til at en OpenClaw-agent kan lese siste posisjon og siste tur uten å koble seg direkte til Pi-en.
 
 ## Nåværende status
 Følgende er implementert på Pi-en:
@@ -161,10 +161,11 @@ Det pushes bare når det faktisk finnes endringer.
 - turdeteksjon er forbedret med 15 min lite-bevegelse-regel, men er fortsatt heuristisk
 - eksportstruktur bruker foreløpig flat `trips/`-mappe
 - GPX er ikke implementert ennå
-- OpenClaw-agent-lesing, kart og Telegram gjenstår
+- interaktiv HTML-kartvisning er foreløpig best egnet lokalt; publisering til en tilgjengelig webflate/URL gjenstår
+- Telegram-/chat-flater er best med bilde eller lenke, ikke rå lokal HTML-fil
 
 ## Naturlige neste steg
-1. la agenten lese `latest.json` og siste turfil
-2. generere enkel turoppsummering
-3. rendere kart fra GeoJSON
-4. sende resultat via Telegram
+1. publisere rendret HTML-kart til en webserver eller annen URL-tilgjengelig flate
+2. la agenten kunne dele både bilde og lenke til interaktivt kart
+3. generere enkel turoppsummering der det er nyttig
+4. eventuelt legge til Telegram-flyt rundt dette
