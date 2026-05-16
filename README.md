@@ -65,24 +65,38 @@ GeoJSON `FeatureCollection` med:
 - en `LineString` for hele ruta
 - `Point`-features for hvert punkt
 
+## Operativ filstruktur på SR500
+Bare prosjektets relevante struktur er dokumentert her.
+Secrets, Git-credentials og øvrige systemfiler er bevisst utelatt.
+
+```text
+/home/johnny/mc-gps/
+├── exports/
+│   ├── latest.json
+│   └── trips/
+│       ├── trip-*.summary.json
+│       └── trip-*.geojson
+├── gps.db
+├── scripts/
+│   ├── read_gps.py
+│   ├── gps_logger.py
+│   ├── trip_builder.py
+│   ├── export_gps.py
+│   ├── sync_exports.sh
+│   └── run_sync.sh
+└── sr500exports/
+
+/home/johnny/.config/systemd/user/
+├── gps-logger.service
+├── gps-sync.service
+└── gps-sync.timer
+```
+
 ## Hvor dette kjører på Pi-en
 Basemappe:
 
 ```text
 /home/johnny/mc-gps/
-```
-
-Viktige filer:
-
-```text
-/home/johnny/mc-gps/gps.db
-/home/johnny/mc-gps/exports/
-/home/johnny/mc-gps/scripts/read_gps.py
-/home/johnny/mc-gps/scripts/gps_logger.py
-/home/johnny/mc-gps/scripts/trip_builder.py
-/home/johnny/mc-gps/scripts/export_gps.py
-/home/johnny/mc-gps/scripts/sync_exports.sh
-/home/johnny/mc-gps/scripts/run_sync.sh
 ```
 
 ## Systemd-oppsett

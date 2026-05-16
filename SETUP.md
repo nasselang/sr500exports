@@ -20,9 +20,16 @@ Verifisert på Pi-en:
 GPS-fix ble bekreftet via `gpsd` og Python-script mot lokal GPSD-socket.
 
 ## Mappestruktur på Pi-en
+Bare prosjektets operative struktur er tatt med her.
+Hemmeligheter, credential-filer og øvrige systemfiler er utelatt med vilje.
+
 ```text
 /home/johnny/mc-gps/
 ├── exports/
+│   ├── latest.json
+│   └── trips/
+│       ├── trip-*.summary.json
+│       └── trip-*.geojson
 ├── gps.db
 ├── scripts/
 │   ├── export_gps.py
@@ -32,6 +39,11 @@ GPS-fix ble bekreftet via `gpsd` og Python-script mot lokal GPSD-socket.
 │   ├── sync_exports.sh
 │   └── trip_builder.py
 └── sr500exports/
+
+/home/johnny/.config/systemd/user/
+├── gps-logger.service
+├── gps-sync.service
+└── gps-sync.timer
 ```
 
 ## Database
