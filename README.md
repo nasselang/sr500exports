@@ -18,8 +18,10 @@ Følgende er implementert på Pi-en:
 3. punktene grupperes til turer med `trip_id`
 4. tur avsluttes ved mer enn 5 minutters datagap eller ved lite bevegelse over 15 minutter
 5. ny tur opprettes når reell bevegelse starter igjen
-6. siste tur eksporteres til JSON/GeoJSON/GPX
-7. eksportene synkes automatisk til dette repoet hvert 15. minutt
+6. alle gyldige turer eksporteres til JSON/GeoJSON/GPX
+7. støy-turer filtreres bort ved rebuild når de ser ut som GPS-drift (lav distanse + lang varighet + lav snittfart)
+8. stale eksportfiler ryddes bort før ny eksport skrives
+9. eksportene synkes automatisk til dette repoet hvert 15. minutt
 
 ## Arkitektur
 På Raspberry Pi-en kjører følgende komponenter:
@@ -32,8 +34,10 @@ På Raspberry Pi-en kjører følgende komponenter:
   - bygger turer fra `gps_points`
   - avslutter tur ved >5 min datagap eller 15 min lite bevegelse
   - oppretter ny tur når faktisk bevegelse starter igjen
+  - filtrerer bort støy-turer som ligner GPS-drift / parkert wobble
 - `export_gps.py`
-  - eksporterer `latest.json`, `summary.json`, `geojson` og `gpx`
+  - eksporterer `latest.json`, `summary.json`, `geojson` og `gpx` for alle gyldige turer
+  - rydder bort gamle eksportfiler som ikke lenger finnes i `trips`-tabellen
 - `sync_exports.sh`
   - kopierer eksportene inn i repoet, commit’er og pusher
 - `run_sync.sh`
@@ -123,6 +127,9 @@ Standardverdier:
 - `TRIP_IDLE_SECONDS=900`
 - `TRIP_IDLE_RADIUS_METERS=30`
 - `TRIP_RESUME_MOVE_METERS=50`
+- `MIN_REAL_TRIP_DISTANCE_KM=1.0`
+- `MIN_REAL_TRIP_AVG_SPEED_KMH=2.0`
+- `MIN_REAL_TRIP_DURATION_SECONDS=600`
 
 Filen inneholder også anbefalte profiler for:
 - konservativ
@@ -164,14 +171,15 @@ Sync-flyten er:
 Det pushes bare når det faktisk finnes endringer.
 
 ## Nåværende begrensninger
-- turdeteksjon er forbedret med 15 min lite-bevegelse-regel, men er fortsatt heuristisk
+- turdeteksjon er forbedret med 15 min lite-bevegelse-regel og enkel støyfiltrering, men er fortsatt heuristisk
 - eksportstruktur bruker foreløpig flat `trips/`-mappe
 - GPX er lagt til som eksportformat, men er foreløpig et enkelt sporformat uten ekstra waypoints/segmentmetadata
-- interaktiv HTML-kartvisning er foreløpig best egnet lokalt; publisering til en tilgjengelig webflate/URL gjenstår
-- Telegram-/chat-flater er best med bilde eller lenke, ikke rå lokal HTML-fil
+- interaktiv HTML-kartvisning publiseres nå via `sr500maps` på GitHub Pages
+- publisert kartflate: `https://nasselang.github.io/sr500maps/`
+- Telegram-/chat-flater er fortsatt best med bilde eller lenke, ikke rå lokal HTML-fil
 
 ## Naturlige neste steg
-1. publisere rendret HTML-kart til en webserver eller annen URL-tilgjengelig flate
-2. la agenten kunne dele både bilde og lenke til interaktivt kart
-3. generere enkel turoppsummering der det er nyttig
+1. la agenten kunne dele både bilde og lenke til publisert interaktivt kart fra `sr500maps`
+2. generere enkel turoppsummering der det er nyttig
+3. vurdere direkte GPX-utlevering fra agent ved forespørsel
 4. eventuelt legge til Telegram-flyt rundt dette

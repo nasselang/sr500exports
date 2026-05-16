@@ -90,6 +90,12 @@ Dersom sykkelen har lite bevegelse i 15 minutter, legges nye punkter midlertidig
 Rebygger turer fra eksisterende punkter og oppdaterer `trips`-tabellen.
 Starter ny tur dersom gapet mellom punkter er større enn 5 minutter.
 Avslutter også tur dersom sykkelen holder seg innenfor liten radius i 15 minutter, og neste reelle bevegelse starter en ny tur.
+Filtrerer også bort støy-turer som ser ut som GPS-drift / parkert wobble.
+
+Standard støyfilter:
+- `distance_km < 1.0`
+- `duration >= 600 sek`
+- `average_speed < 2.0 km/t`
 
 ### `export_gps.py`
 Genererer:
@@ -98,6 +104,8 @@ Genererer:
 - `exports/trips/trip-*.geojson`
 - `exports/trips/trip-*.gpx`
 
+Eksportscriptet rydder også bort gamle eksportfiler som ikke lenger finnes i `trips`-tabellen før nye filer skrives.
+
 ### `sync_exports.sh`
 Kopierer eksportfiler inn i Git-repoet, committer og pusher ved endringer.
 
@@ -105,7 +113,10 @@ Kopierer eksportfiler inn i Git-repoet, committer og pusher ved endringer.
 Wrapper som kjører:
 1. `trip_builder.py`
 2. `export_gps.py`
-3. `sync_exports.sh`
+3. `render_trip_html.py`
+4. `render_maps_index.py`
+5. `sync_exports.sh`
+6. `sync_maps.sh`
 
 ## Konfigurerbare terskler
 Konfigfil:
@@ -119,6 +130,9 @@ Standardverdier:
 - `TRIP_IDLE_SECONDS=900`
 - `TRIP_IDLE_RADIUS_METERS=30`
 - `TRIP_RESUME_MOVE_METERS=50`
+- `MIN_REAL_TRIP_DISTANCE_KM=1.0`
+- `MIN_REAL_TRIP_AVG_SPEED_KMH=2.0`
+- `MIN_REAL_TRIP_DURATION_SECONDS=600`
 
 Konfigfila inneholder også anbefalte profiler for:
 - konservativ
@@ -148,7 +162,7 @@ Kjører `gps-sync.service` automatisk:
 - deretter hver 15. minutt
 
 ## GitHub
-Repo:
+Datarepo:
 
 ```text
 https://github.com/nasselang/sr500exports
@@ -158,6 +172,19 @@ Lokal clone på Pi:
 
 ```text
 /home/johnny/mc-gps/sr500exports
+```
+
+Kartpublisering:
+
+```text
+https://github.com/nasselang/sr500maps
+https://nasselang.github.io/sr500maps/
+```
+
+Lokal clone på Pi:
+
+```text
+/home/johnny/mc-gps/sr500maps
 ```
 
 Git-identitet satt på Pi:
@@ -188,7 +215,7 @@ git log -1 --stat
 ```
 
 ## Gjenstående arbeid
-- ytterligere finjustering av turdeteksjon ved behov
-- publisering av rendret HTML-kart til en webserver eller annen URL-tilgjengelig flate
+- ytterligere finjustering av turdeteksjon og støyfiltrering ved behov
 - forbedret deling av kart ut til chatflater som bilde og/eller lenke
+- direkte GPX-utlevering fra agent ved behov
 - eventuell Telegram-integrasjon rundt dette
