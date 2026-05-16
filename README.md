@@ -75,6 +75,8 @@ Secrets, Git-credentials og øvrige systemfiler er bevisst utelatt.
 
 ```text
 /home/johnny/mc-gps/
+├── config/
+│   └── trip-config.env
 ├── exports/
 │   ├── latest.json
 │   └── trips/
@@ -102,6 +104,21 @@ Basemappe:
 ```text
 /home/johnny/mc-gps/
 ```
+
+## Konfigurerbare terskler
+Trip-logikken leser nå terskler fra:
+
+```text
+/home/johnny/mc-gps/config/trip-config.env
+```
+
+Standardverdier:
+- `TRIP_GAP_SECONDS=300`
+- `TRIP_IDLE_SECONDS=900`
+- `TRIP_IDLE_RADIUS_METERS=30`
+- `TRIP_RESUME_MOVE_METERS=50`
+
+Dette gjør at trip-deling kan finjusteres uten å redigere Python-koden.
 
 ## Systemd-oppsett
 Det brukes `systemd --user` på Pi-en.

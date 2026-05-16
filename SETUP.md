@@ -25,6 +25,8 @@ Hemmeligheter, credential-filer og øvrige systemfiler er utelatt med vilje.
 
 ```text
 /home/johnny/mc-gps/
+├── config/
+│   └── trip-config.env
 ├── exports/
 │   ├── latest.json
 │   └── trips/
@@ -102,6 +104,22 @@ Wrapper som kjører:
 1. `trip_builder.py`
 2. `export_gps.py`
 3. `sync_exports.sh`
+
+## Konfigurerbare terskler
+Konfigfil:
+
+```text
+/home/johnny/mc-gps/config/trip-config.env
+```
+
+Standardverdier:
+- `TRIP_GAP_SECONDS=300`
+- `TRIP_IDLE_SECONDS=900`
+- `TRIP_IDLE_RADIUS_METERS=30`
+- `TRIP_RESUME_MOVE_METERS=50`
+
+Både `gps_logger.py` og `trip_builder.py` leser disse verdiene.
+`gps-logger.service` laster dem via `EnvironmentFile`, og `run_sync.sh` sourcer samme fil før rebuild/export/sync.
 
 ## systemd user units
 Plassering:
