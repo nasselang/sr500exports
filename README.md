@@ -118,6 +118,11 @@ Standardverdier:
 - `TRIP_IDLE_RADIUS_METERS=30`
 - `TRIP_RESUME_MOVE_METERS=50`
 
+Filen inneholder også anbefalte profiler for:
+- konservativ
+- normal / anbefalt
+- aggressiv
+
 Dette gjør at trip-deling kan finjusteres uten å redigere Python-koden.
 
 ## Systemd-oppsett

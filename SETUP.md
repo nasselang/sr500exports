@@ -118,6 +118,11 @@ Standardverdier:
 - `TRIP_IDLE_RADIUS_METERS=30`
 - `TRIP_RESUME_MOVE_METERS=50`
 
+Konfigfila inneholder også anbefalte profiler for:
+- konservativ
+- normal / anbefalt
+- aggressiv
+
 Både `gps_logger.py` og `trip_builder.py` leser disse verdiene.
 `gps-logger.service` laster dem via `EnvironmentFile`, og `run_sync.sh` sourcer samme fil før rebuild/export/sync.
 
