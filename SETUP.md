@@ -81,10 +81,12 @@ Brukes for enkel verifisering av at `gpsd` leverer gyldig posisjon.
 Lytter på `gpsd` og skriver gyldige GPS-punkter til SQLite.
 Filtrerer bort ugyldige punkter og ignorerer duplikater med samme timestamp.
 Setter også `trip_id` løpende.
+Dersom sykkelen har lite bevegelse i 15 minutter, legges nye punkter midlertidig uten `trip_id` til bevegelse faktisk starter igjen.
 
 ### `trip_builder.py`
 Rebygger turer fra eksisterende punkter og oppdaterer `trips`-tabellen.
 Starter ny tur dersom gapet mellom punkter er større enn 5 minutter.
+Avslutter også tur dersom sykkelen holder seg innenfor liten radius i 15 minutter, og neste reelle bevegelse starter en ny tur.
 
 ### `export_gps.py`
 Genererer:
@@ -162,7 +164,7 @@ git log -1 --stat
 
 ## Gjenstående arbeid
 - GPX-eksport
-- mer robust turdeteksjon
+- ytterligere finjustering av turdeteksjon ved behov
 - OpenClaw-agent som leser eksportene
 - kart-rendering
 - Telegram-integrasjon

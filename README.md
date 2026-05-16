@@ -15,8 +15,10 @@ Følgende er implementert på Pi-en:
 1. GPS-dongle (`u-blox 7`) leses via `gpsd`
 2. gyldige GPS-punkter lagres i SQLite (`gps.db`)
 3. punktene grupperes til turer med `trip_id`
-4. siste tur eksporteres til JSON/GeoJSON
-5. eksportene synkes automatisk til dette repoet hvert 15. minutt
+4. tur avsluttes ved mer enn 5 minutters datagap eller ved lite bevegelse over 15 minutter
+5. ny tur opprettes når reell bevegelse starter igjen
+6. siste tur eksporteres til JSON/GeoJSON
+7. eksportene synkes automatisk til dette repoet hvert 15. minutt
 
 ## Arkitektur
 På Raspberry Pi-en kjører følgende komponenter:
@@ -27,6 +29,8 @@ På Raspberry Pi-en kjører følgende komponenter:
   - kontinuerlig logger GPS-punkter til SQLite
 - `trip_builder.py`
   - bygger turer fra `gps_points`
+  - avslutter tur ved >5 min datagap eller 15 min lite bevegelse
+  - oppretter ny tur når faktisk bevegelse starter igjen
 - `export_gps.py`
   - eksporterer `latest.json`, `summary.json` og `geojson`
 - `sync_exports.sh`
@@ -132,7 +136,7 @@ Sync-flyten er:
 Det pushes bare når det faktisk finnes endringer.
 
 ## Nåværende begrensninger
-- turdeteksjon er foreløpig basert på tids-gap (> 5 min)
+- turdeteksjon er forbedret med 15 min lite-bevegelse-regel, men er fortsatt heuristisk
 - eksportstruktur bruker foreløpig flat `trips/`-mappe
 - GPX er ikke implementert ennå
 - OpenClaw-agent-lesing, kart og Telegram gjenstår
