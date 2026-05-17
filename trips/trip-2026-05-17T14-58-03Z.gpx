@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="sr500exports" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>trip-2026-05-17T14-58-03Z</name>
+    <time>2026-05-17T14:58:03.000Z</time>
+  </metadata>
+  <trk>
+    <name>trip-2026-05-17T14-58-03Z</name>
+    <type>motorcycle-trip</type>
+    <trkseg>
+      <trkpt lat="59.900290802" lon="10.834091344"><ele>66.3728</ele><time>2026-05-17T14:58:03.000Z</time></trkpt>
+      <trkpt lat="59.900294318" lon="10.834064161"><ele>65.2904</ele><time>2026-05-17T14:58:04.000Z</time></trkpt>
+      <trkpt lat="59.90030018" lon="10.833988385"><ele>65.7323</ele><time>2026-05-17T14:58:05.000Z</time></trkpt>
+      <trkpt lat="59.900313458" lon="10.833957528"><ele>66.123</ele><time>2026-05-17T14:58:06.000Z</time></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
