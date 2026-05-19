@@ -37,6 +37,7 @@ Hemmeligheter, credential-filer og øvrige systemfiler er utelatt med vilje.
 ├── scripts/
 │   ├── export_gps.py
 │   ├── gps_logger.py
+│   ├── prune_gps_db.py
 │   ├── read_gps.py
 │   ├── run_sync.sh
 │   ├── sync_exports.sh
@@ -191,6 +192,30 @@ Git-identitet satt på Pi:
 - navn: `nasselang`
 - epost: `nasselang@gmail.com`
 
+## Databasevedlikehold
+For å holde `gps.db` nede i størrelse uten å miste historiske turer, brukes:
+
+```text
+/home/johnny/mc-gps/scripts/prune_gps_db.py
+```
+
+Scriptet sletter bare råpunkt-rader i `gps_points` for avsluttede turer eldre enn valgt retention-vindu. `trips`-tabellen og eksportfilene beholdes.
+
+Anbefalt standard:
+- retention: `90` dager
+- første kjøring som dry-run
+- ekte kjøring med `--apply --vacuum --analyze`
+
+Eksempler:
+
+```bash
+# dry-run
+python3 /home/johnny/mc-gps/scripts/prune_gps_db.py --days 90 --verbose
+
+# faktisk sletting
+python3 /home/johnny/mc-gps/scripts/prune_gps_db.py --days 90 --apply --vacuum --analyze
+```
+
 ## Driftstips
 Sjekk logger-service:
 ```bash
@@ -206,6 +231,11 @@ systemctl --user list-timers --all | grep gps-sync
 Kjør sync manuelt:
 ```bash
 systemctl --user start gps-sync.service
+```
+
+Kjør database-prune manuelt:
+```bash
+python3 /home/johnny/mc-gps/scripts/prune_gps_db.py --days 90 --verbose
 ```
 
 Se siste commit i repo-klonen:

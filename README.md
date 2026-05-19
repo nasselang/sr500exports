@@ -98,6 +98,7 @@ Secrets, Git-credentials og øvrige systemfiler er bevisst utelatt.
 │   ├── gps_logger.py
 │   ├── trip_builder.py
 │   ├── export_gps.py
+│   ├── prune_gps_db.py
 │   ├── sync_exports.sh
 │   └── run_sync.sh
 └── sr500exports/
@@ -169,6 +170,34 @@ Sync-flyten er:
 6. `git push`
 
 Det pushes bare når det faktisk finnes endringer.
+
+## Databasevedlikehold
+For å hindre at SQLite-databasen vokser unødvendig, finnes det nå et eget ryddeverktøy:
+
+- `scripts/prune_gps_db.py`
+
+Dette scriptet:
+- sletter gamle rader i `gps_points`
+- rydder bare punkter for **avsluttede turer** eldre enn valgt retention-vindu
+- **beholder** `trips`-tabellen
+- **beholder** eksportfiler (`summary.json`, `geojson`, `gpx`, `latest.json`)
+- støtter dry-run som standard
+- kan kjøre `VACUUM` og `ANALYZE` etter sletting
+
+Anbefalt policy akkurat nå:
+- behold råpunkter siste `90` dager
+- bruk eksportfilene som langtidsarkiv
+- kjør første gang som dry-run
+
+Eksempler:
+
+```bash
+# se hva som ville blitt slettet
+python3 /home/johnny/mc-gps/scripts/prune_gps_db.py --days 90 --verbose
+
+# faktisk sletting + databasevedlikehold
+python3 /home/johnny/mc-gps/scripts/prune_gps_db.py --days 90 --apply --vacuum --analyze
+```
 
 ## Nåværende begrensninger
 - turdeteksjon er forbedret med 15 min lite-bevegelse-regel og enkel støyfiltrering, men er fortsatt heuristisk
