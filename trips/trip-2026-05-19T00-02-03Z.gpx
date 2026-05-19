@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="sr500exports" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>trip-2026-05-19T00-02-03Z</name>
+    <time>2026-05-19T00:02:03.000Z</time>
+  </metadata>
+  <trk>
+    <name>trip-2026-05-19T00-02-03Z</name>
+    <type>motorcycle-trip</type>
+    <trkseg>
+      <trkpt lat="59.90044922" lon="10.834029579"><ele>124.7768</ele><time>2026-05-19T00:02:03.000Z</time></trkpt>
+      <trkpt lat="59.900464067" lon="10.833835138"><ele>124.8577</ele><time>2026-05-19T00:02:04.000Z</time></trkpt>
+      <trkpt lat="59.900474459" lon="10.833648707"><ele>124.8219</ele><time>2026-05-19T00:02:05.000Z</time></trkpt>
+      <trkpt lat="59.900472309" lon="10.833826676"><ele>124.7993</ele><time>2026-05-19T00:02:06.000Z</time></trkpt>
+      <trkpt lat="59.900472821" lon="10.833775969"><ele>124.8702</ele><time>2026-05-19T00:02:07.000Z</time></trkpt>
+      <trkpt lat="59.900473251" lon="10.833845206"><ele>124.8888</ele><time>2026-05-19T00:02:08.000Z</time></trkpt>
+      <trkpt lat="59.900472871" lon="10.833932353"><ele>124.8095</ele><time>2026-05-19T00:02:09.000Z</time></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
