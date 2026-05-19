@@ -209,7 +209,8 @@ python3 /home/johnny/mc-gps/scripts/prune_gps_db.py --days 90 --apply --vacuum -
 - Telegram-/chat-flater er fortsatt best med bilde eller lenke, ikke rå lokal HTML-fil
 
 ## Naturlige neste steg
-1. la agenten kunne dele både bilde og lenke til publisert interaktivt kart fra `sr500maps`
-2. generere enkel turoppsummering der det er nyttig
-3. vurdere direkte GPX-utlevering fra agent ved forespørsel
-4. eventuelt legge til Telegram-flyt rundt dette
+1. finjustere turdeteksjon og støyfiltrering videre basert på flere reelle kjøreturer
+2. lage bedre turoppsummeringer for agent- og chatflater, f.eks. distanse, varighet, start/slutt og en kort beskrivelse
+3. vurdere om eksportstrukturen bør deles inn mer hvis antall turer vokser mye, for eksempel per måned eller år
+4. vurdere om vedlikeholdsjobber som prune bør få enkel logging eller statusrapportering
+5. forbedre agentopplevelsen videre, f.eks. tydeligere valg mellom bilde, lenke, HTML og eventuelt GPX i samme flyt
