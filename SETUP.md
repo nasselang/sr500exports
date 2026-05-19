@@ -162,6 +162,12 @@ Kjører `gps-sync.service` automatisk:
 - 2 minutter etter boot
 - deretter hver 15. minutt
 
+### `gps-prune.timer`
+Kjører `gps-prune.service` automatisk for databasevedlikehold:
+- 10 minutter etter boot som første mulige catch-up
+- deretter månedlig (`OnCalendar=monthly`)
+- bruker `prune_gps_db.py --days 90 --apply --vacuum --analyze`
+
 ## GitHub
 Datarepo:
 
@@ -205,6 +211,7 @@ Anbefalt standard:
 - retention: `90` dager
 - første kjøring som dry-run
 - ekte kjøring med `--apply --vacuum --analyze`
+- periodisk automatikk via `gps-prune.timer` månedlig på Pi-en
 
 Eksempler:
 

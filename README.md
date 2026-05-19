@@ -188,6 +188,7 @@ Anbefalt policy akkurat nå:
 - behold råpunkter siste `90` dager
 - bruk eksportfilene som langtidsarkiv
 - kjør første gang som dry-run
+- periodisk vedlikehold kjøres nå månedlig på Pi-en via `gps-prune.timer`
 
 Eksempler:
 
