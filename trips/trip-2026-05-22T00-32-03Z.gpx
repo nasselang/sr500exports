@@ -2,23 +2,23 @@
 <gpx version="1.1" creator="sr500exports" xmlns="http://www.topografix.com/GPX/1/1">
   <metadata>
     <name>trip-2026-05-22T00-32-03Z</name>
-    <time>2026-05-22T00:32:03.000Z</time>
+    <time>2026-05-22T00:48:03.000Z</time>
   </metadata>
   <trk>
     <name>trip-2026-05-22T00-32-03Z</name>
     <type>motorcycle-trip</type>
     <trkseg>
-      <trkpt lat="59.900374129" lon="10.834810161"><ele>124.0337</ele><time>2026-05-22T00:32:03.000Z</time></trkpt>
-      <trkpt lat="59.900379519" lon="10.834906227"><ele>123.8939</ele><time>2026-05-22T00:32:04.000Z</time></trkpt>
-      <trkpt lat="59.900370219" lon="10.835089718"><ele>123.7321</ele><time>2026-05-22T00:32:05.000Z</time></trkpt>
-      <trkpt lat="59.900358757" lon="10.835231308"><ele>123.7213</ele><time>2026-05-22T00:32:06.000Z</time></trkpt>
-      <trkpt lat="59.90035619" lon="10.835192221"><ele>123.9563</ele><time>2026-05-22T00:32:07.000Z</time></trkpt>
-      <trkpt lat="59.900341091" lon="10.835302612"><ele>124.0418</ele><time>2026-05-22T00:32:08.000Z</time></trkpt>
-      <trkpt lat="59.900340929" lon="10.835372752"><ele>123.8443</ele><time>2026-05-22T00:32:09.000Z</time></trkpt>
-      <trkpt lat="59.900337902" lon="10.835460755"><ele>123.9244</ele><time>2026-05-22T00:32:10.000Z</time></trkpt>
-      <trkpt lat="59.900335109" lon="10.835508598"><ele>124.024</ele><time>2026-05-22T00:32:11.000Z</time></trkpt>
-      <trkpt lat="59.900344501" lon="10.83558007"><ele>124.2498</ele><time>2026-05-22T00:32:12.000Z</time></trkpt>
-      <trkpt lat="59.900339305" lon="10.835471075"><ele>124.4349</ele><time>2026-05-22T00:32:13.000Z</time></trkpt>
+      <trkpt lat="59.900479136" lon="10.834181173"><ele>118.8226</ele><time>2026-05-22T00:48:03.000Z</time></trkpt>
+      <trkpt lat="59.900464541" lon="10.834176755"><ele>118.8059</ele><time>2026-05-22T00:48:04.000Z</time></trkpt>
+      <trkpt lat="59.900462984" lon="10.834143764"><ele>118.7561</ele><time>2026-05-22T00:48:05.000Z</time></trkpt>
+      <trkpt lat="59.900445781" lon="10.834174111"><ele>118.7575</ele><time>2026-05-22T00:48:06.000Z</time></trkpt>
+      <trkpt lat="59.900424879" lon="10.8340984"><ele>118.6856</ele><time>2026-05-22T00:48:07.000Z</time></trkpt>
+      <trkpt lat="59.900442254" lon="10.834138619"><ele>121.9096</ele><time>2026-05-22T00:48:08.000Z</time></trkpt>
+      <trkpt lat="59.900446826" lon="10.834089526"><ele>123.7294</ele><time>2026-05-22T00:48:09.000Z</time></trkpt>
+      <trkpt lat="59.900415174" lon="10.834101073"><ele>124.4906</ele><time>2026-05-22T00:48:10.000Z</time></trkpt>
+      <trkpt lat="59.900404005" lon="10.834087022"><ele>124.7033</ele><time>2026-05-22T00:48:11.000Z</time></trkpt>
+      <trkpt lat="59.900419061" lon="10.834029551"><ele>124.7249</ele><time>2026-05-22T00:48:12.000Z</time></trkpt>
+      <trkpt lat="59.90041816" lon="10.833902685"><ele>124.8059</ele><time>2026-05-22T00:48:13.000Z</time></trkpt>
     </trkseg>
   </trk>
 </gpx>
