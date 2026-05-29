@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="sr500exports" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>trip-2026-05-29T12-57-43Z</name>
+    <time>2026-05-29T12:57:43.000Z</time>
+  </metadata>
+  <trk>
+    <name>trip-2026-05-29T12-57-43Z</name>
+    <type>motorcycle-trip</type>
+    <trkseg>
+      <trkpt lat="59.900541657" lon="10.831167084"><ele>62.487</ele><time>2026-05-29T12:57:43.000Z</time></trkpt>
+      <trkpt lat="59.900541239" lon="10.831169032"><ele>62.2251</ele><time>2026-05-29T12:57:44.000Z</time></trkpt>
+      <trkpt lat="59.90054188" lon="10.831173463"><ele>61.1434</ele><time>2026-05-29T12:57:45.000Z</time></trkpt>
+      <trkpt lat="59.900542227" lon="10.83117752"><ele>60.6471</ele><time>2026-05-29T12:57:46.000Z</time></trkpt>
+      <trkpt lat="59.900542816" lon="10.831181967"><ele>60.7131</ele><time>2026-05-29T12:57:47.000Z</time></trkpt>
+      <trkpt lat="59.900543341" lon="10.831186128"><ele>62.1009</ele><time>2026-05-29T12:57:48.000Z</time></trkpt>
+      <trkpt lat="59.900544395" lon="10.831185655"><ele>63.0038</ele><time>2026-05-29T12:57:49.000Z</time></trkpt>
+      <trkpt lat="59.900544551" lon="10.831186762"><ele>61.4333</ele><time>2026-05-29T12:57:50.000Z</time></trkpt>
+      <trkpt lat="59.90054446" lon="10.831188241"><ele>59.1737</ele><time>2026-05-29T12:57:51.000Z</time></trkpt>
+      <trkpt lat="59.900544956" lon="10.831189668"><ele>59.604</ele><time>2026-05-29T12:57:52.000Z</time></trkpt>
+      <trkpt lat="59.900545458" lon="10.831188622"><ele>59.7796</ele><time>2026-05-29T12:57:53.000Z</time></trkpt>
+      <trkpt lat="59.900545935" lon="10.831186768"><ele>60.8469</ele><time>2026-05-29T12:57:54.000Z</time></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
