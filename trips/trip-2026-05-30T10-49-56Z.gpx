@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="sr500exports" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>trip-2026-05-30T10-49-56Z</name>
+    <time>2026-05-30T10:49:56.000Z</time>
+  </metadata>
+  <trk>
+    <name>trip-2026-05-30T10-49-56Z</name>
+    <type>motorcycle-trip</type>
+    <trkseg>
+      <trkpt lat="59.900520527" lon="10.831990995"><ele>114.33</ele><time>2026-05-30T10:49:56.000Z</time></trkpt>
+      <trkpt lat="59.900527688" lon="10.832000675"><ele>114.4107</ele><time>2026-05-30T10:49:57.000Z</time></trkpt>
+      <trkpt lat="59.900522831" lon="10.831992301"><ele>114.4354</ele><time>2026-05-30T10:49:58.000Z</time></trkpt>
+      <trkpt lat="59.900512543" lon="10.83196606"><ele>114.3947</ele><time>2026-05-30T10:49:59.000Z</time></trkpt>
+      <trkpt lat="59.900515879" lon="10.831971522"><ele>114.5029</ele><time>2026-05-30T10:50:00.000Z</time></trkpt>
+      <trkpt lat="59.900520428" lon="10.831963755"><ele>114.6021</ele><time>2026-05-30T10:50:01.000Z</time></trkpt>
+      <trkpt lat="59.900511609" lon="10.831997491"><ele>114.6631</ele><time>2026-05-30T10:50:02.000Z</time></trkpt>
+      <trkpt lat="59.900506802" lon="10.832007128"><ele>114.6962</ele><time>2026-05-30T10:50:03.000Z</time></trkpt>
+      <trkpt lat="59.900507788" lon="10.832049588"><ele>114.7367</ele><time>2026-05-30T10:50:04.000Z</time></trkpt>
+      <trkpt lat="59.9005169" lon="10.832040139"><ele>114.7839</ele><time>2026-05-30T10:50:05.000Z</time></trkpt>
+      <trkpt lat="59.90051383" lon="10.832053208"><ele>114.6354</ele><time>2026-05-30T10:50:06.000Z</time></trkpt>
+      <trkpt lat="59.900518024" lon="10.832084088"><ele>114.6189</ele><time>2026-05-30T10:50:07.000Z</time></trkpt>
+      <trkpt lat="59.90051487" lon="10.832081968"><ele>114.7186</ele><time>2026-05-30T10:50:08.000Z</time></trkpt>
+      <trkpt lat="59.900527374" lon="10.832086165"><ele>114.6739</ele><time>2026-05-30T10:50:09.000Z</time></trkpt>
+      <trkpt lat="59.900517377" lon="10.832066058"><ele>114.7185</ele><time>2026-05-30T10:50:10.000Z</time></trkpt>
+      <trkpt lat="59.900507189" lon="10.832075555"><ele>114.6483</ele><time>2026-05-30T10:50:11.000Z</time></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
